@@ -1,0 +1,6 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+smoke_ring_page:
+  id: 1
+  wiki_id: 1
+  name: "Smoke_ring"
+  title: "Smoke ring"

@@ -1,0 +1,9 @@
+<div class="item" id="create">
+<h2>Track Visit</h2>
+
+<%= start_form_tag :action => 'create' %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag "Create" %>
+<%= end_form_tag %>
+</div>
+<%= link_to 'Back', :action => 'list' %>

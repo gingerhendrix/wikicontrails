@@ -1,0 +1,29 @@
+
+div.visit{
+    height: 60px;
+
+}
+
+span.wiki{
+   float: left;
+   clear: both;
+   display: block;
+   font-size: 0.9em;
+
+}
+span.page{
+   float: left;
+   clear: both;
+   display: block;
+   font-size: 1.7em;
+}
+
+span.page a{
+    color: #000;
+}
+span.time{
+   float: left;
+   display: block;
+   font-size: 0.9em;
+   margin-left: 5px;
+}

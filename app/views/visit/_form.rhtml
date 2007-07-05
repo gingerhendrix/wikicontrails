@@ -1,0 +1,40 @@
+<%= error_messages_for 'wiki_visit' %>
+
+<script>
+views = ["simple", "full"]
+function changeFormView(view){
+    for(var i=0; i<views.length; i++){
+        document.getElementById(views[i]+"Form").style.display = "none";
+    }
+    document.getElementById(view + "Form").style.display = "block";
+}
+</script>
+
+<!--[form:wiki_visit]-->
+
+<input type="radio" name="type" value="simple" onchange="changeFormView('simple')" checked="checked"/> Simple</input>
+<input type="radio" name="type" value="full" onchange="changeFormView('full')"> Full</input> 
+<div id="fullForm" style="display:none">
+<p><label for="wiki_page_wiki_id">Wiki</label><br/>
+<%= select(:wiki_page, :wiki_id, @wikis) %></p>
+
+<p><label for="wiki_page_name">Page Name</label><br/>
+<%= text_field(:wiki_page, :name) %></p>
+
+<p><label for="wiki_page_name">Page Title</label><br/>
+<%= text_field(:wiki_page, :title) %></p>
+
+
+<p><label for="wiki_visit_time_of_visit">Time of visit</label><br/>
+<%= datetime_select 'wiki_visit', 'time_of_visit'  %></p>
+</div>
+
+<div id="simpleForm">
+<p><label for="url">URL</label><br/>
+<%= text_field(:wiki_page, :url) %></p>
+<p><label for="wiki_visit_time_of_visit">Time of visit</label><br/>
+<%= datetime_select 'wiki_visit', 'time_of_visit'  %></p>
+
+</div>
+<!--[eoform:wiki_visit]-->
+

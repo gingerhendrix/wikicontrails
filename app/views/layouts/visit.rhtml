@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Wiki Contrails</title>
+    <link rel="stylesheet" href="/stylesheets/reset-fonts-grids.css"/> 
+     <%= stylesheet_link_tag 'visits' %>
+    <style type="text/css" media="screen">
+    	body{
+    		background-color: #004382;
+    	}
+    	#bd{
+    		min-height: 600px;
+    		background-color: #fff;
+    	}
+    	#bd h2{
+    		font-family: verdana;
+    		font-size: 1.3em;
+    		line-height: 1.6em;
+    	}
+    	#ft{
+    		background-color: #fff;
+    		border-top: 2px solid #004382;
+    		padding-left: 10px;
+    	}
+    	
+    	div.item{
+    		padding-top: 30px;
+    		margin-left: 20px;
+    		margin-right: 20px;
+    		margin-bottom: 10px;
+    	}
+    	
+    	#userControls{
+    	   float:right;
+    	   clear: both;
+    	   margin-top: 5px;
+    	   margin-right: 10px;
+    	}
+    	
+    </style>
+    
+    </head>
+  <body>
+  
+  <div id="doc" class="yui-t7">
+   <div id="hd"><h1><img src="/images/header_750.jpg" width="750" height="300" alt="Wiki Contrails"/></h1></div>
+   <div id="bd">
+    <div class="yui-g">
+	   <div id="userControls">Welcome <%= @user.username %> | <%= link_to 'logout', :controller => 'login', :action => 'logout' %></div>
+	
+	<%= yield %>
+	
+	</div>
+
+	</div>
+   <div id="ft">Copyright (c) 2007 <a href="http://gandrew.com">Gareth Andrew</a></div>
+</div>
+    
+  </body>
+</html>

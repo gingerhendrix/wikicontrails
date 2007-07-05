@@ -1,0 +1,32 @@
+
+
+<% if @wiki_visits.length==0 %>
+<div class="item" id="installGreasemonkey">
+    <h2>Install Browser Extension</h2>
+    To use wikicontrails you must first <a href="https://addons.mozilla.org/firefox/748/">install Greasemonkey</a> then return to this page
+    and <a href="/wikicontrails.user.js">install this user script</a> 
+</div>
+<% else %>
+
+<div class="item" id="recentvisits">
+<h2>Recent Travels</h2>
+<br/>  
+<% for wiki_visit in @wiki_visits %>
+  <div class="visit">
+    <span class="wiki"><%=h wiki_visit.wiki_page.wiki.name %></span>
+    <span class="time"><%=h wiki_visit.time_of_visit.strftime("%b %d %H:%M") %></span>
+    <span class="page"><a href="<%=h wiki_visit.wiki_page.url %>"><%=h CGI::unescape wiki_visit.wiki_page.title %></a></span>
+    
+  </div>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @wiki_visit_pages.current.previous } if @wiki_visit_pages.current.previous %>
+<%= link_to 'Next page', { :page => @wiki_visit_pages.current.next } if @wiki_visit_pages.current.next %> 
+
+</div>
+<% end %>
+
+<div class="item" id="newVisit">
+<%= link_to 'Record new visit', :action => 'new' %>
+</div>

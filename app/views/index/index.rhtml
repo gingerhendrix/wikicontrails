@@ -1,0 +1,27 @@
+    <div id="welcome" class="item">
+		<h2>Welcome</h2>
+			A long time ago, Matt Webb (with the help of <a href="http://www.kottke.org/06/06/wikipedia-contrails">kottke</a>) <a href="http://interconnected.org/home/2006/06/15/my_wikipedia_contrail">started an interweb meme</a> where people
+			would post their <em>wikipedia contrail</em>, a record of their recent travels through <a href="http://www.wikipedia.org">wikipedia</a>. 
+			Wiki Contrails is a web service and firefox extension for automatically recording your travels.
+	 </div>
+	<div id="login" class="item">
+	    <h2>Log-in or Register</h2>
+	    
+	    <%= error_messages_for 'login' %>
+        <%= start_form_tag :controller=> 'login', :action => 'login' %>
+
+            <!--[form:user]-->
+            <p><label for="login_username">Username</label><br/>
+            <%= text_field 'login', 'username'  %></p>
+            
+            <p><label for="login_password">Password</label><br/>
+            <%= password_field 'login', 'password'  %></p>
+            <!--[eoform:user]-->
+              <%= submit_tag "Log-in" %>
+        <%= end_form_tag %>
+	    
+	</div>
+	<div id="signup">
+              <%= link_to 'Register', :controller => 'user',  :action => 'new' %> &raquo; 
+    </div>
+		
